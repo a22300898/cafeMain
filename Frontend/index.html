@@ -12,7 +12,7 @@
 <div class="container">
     <h1>Extremely Cool Beverages</h1>
 
-    <form>
+    <form action="/crear" method="POST">
         <div class="form-group field-nombre">
             <input type="text" id="nombre" name="nombre" placeholder="nombre" required>
         </div>
@@ -25,7 +25,7 @@
             <div class="form-group field-tipo-bebida">
                 <div class="tipo-container">
                     <label for="tipo_bebida" class="section-title">tipo de bebida</label>
-                    <select id="tipo_bebida" name="tipo_bebida">
+                    <select id="tipo_bebida" name="producto">
                         <option value="espresso">Espresso</option>
                         <option value="americano">Americano</option>
                         <option value="capuchino">Capuchino</option>
@@ -36,9 +36,9 @@
                 <div class="size-container">
                     <label class="section-title">tamaño</label>
                     <div class="size-options">
-                        <label><input type="radio" name="tamano" value="pequeno" checked> Pequeño</label>
-                        <label><input type="radio" name="tamano" value="mediano"> Mediano</label>
-                        <label><input type="radio" name="tamano" value="grande"> Grande</label>
+                        <label><input type="radio" name="size_bebida" value="pequeno" checked> Pequeño</label>
+                        <label><input type="radio" name="size_bebida" value="mediano"> Mediano</label>
+                        <label><input type="radio" name="size_bebida" value="grande"> Grande</label>
                     </div>
                 </div>
             </div>

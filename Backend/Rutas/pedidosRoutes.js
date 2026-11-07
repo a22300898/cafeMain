@@ -1,7 +1,6 @@
-const express = require('express')
-
+const express = require('express');
 const router = express.Router();
+const pedidosController = require('../Controladores/pedidosController');
+router.post('/crear', pedidosController.procesarPedido);
 
-const pedidosController = require('../Controladores/pedidosController')
-
-//router.post('/pedido', pedidosController.)
+module.exports = router;
