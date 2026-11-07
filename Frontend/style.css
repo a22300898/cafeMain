@@ -326,7 +326,6 @@ textarea::placeholder {
     text-align: center;
 }
 
-/* Responsive design for Tablet and Mobile */
 @media (max-width: 600px) {
     .form-row-top {
         flex-direction: column;

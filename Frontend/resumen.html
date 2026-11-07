@@ -21,7 +21,7 @@
         </div>
         <div class="receipt-row">
             <span class="label">correo:</span>
-            <span id="rec-correo" class="value"></span>
+            <span id="rec-correo" class="value" style="text-transform: lowercase"></span>
         </div>
         <div class="receipt-row">
             <span class="label">tipo de bebida:</span>
@@ -57,11 +57,11 @@
 
     document.getElementById('rec-nombre').textContent = params.get('nombre') || '';
     document.getElementById('rec-correo').textContent = params.get('correo') || '';
-    document.getElementById('rec-tipo').textContent = params.get('tipo') || '';
-    document.getElementById('rec-tamano').textContent = params.get('tamano') || '';
+    document.getElementById('rec-tipo').textContent = params.get('producto') || '';
+    document.getElementById('rec-tamano').textContent = params.get('size') || '';
     document.getElementById('rec-cantidad').textContent = params.get('cantidad') || '1';
     document.getElementById('rec-llevar').textContent = params.get('llevar') || 'No';
-    document.getElementById('rec-observaciones').innerText = params.get('observaciones');
+    document.getElementById('rec-observaciones').innerText = params.get('observaciones')||'Ninguna';
 </script>
 </body>
 </html>
