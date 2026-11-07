@@ -1,0 +1,355 @@
+:root {
+    --brown-dark: #3e2723;
+    --brown-medium: #5d4037;
+    --brown-light: #8d6e63;
+    --brown-pale: #d7ccc8;
+    --bg-cream-1: #fdfbf7;
+    --bg-cream-2: #f0ebe1;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-cream-1);
+    background-image:
+            linear-gradient(45deg, var(--bg-cream-2) 25%, transparent 25%),
+            linear-gradient(-45deg, var(--bg-cream-2) 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, var(--bg-cream-2) 75%),
+            linear-gradient(-45deg, transparent 75%, var(--bg-cream-2) 75%);
+    background-size: 40px 40px;
+    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+    color: var(--brown-dark);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 750px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 4px solid var(--brown-dark);
+    padding: 25px;
+    box-shadow: 6px 6px 0px var(--brown-medium);
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    font-weight: bold;
+    color: var(--brown-dark);
+    text-transform: capitalize;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    border: 3px solid var(--brown-dark);
+    padding: 12px 15px;
+    background: #fff;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--brown-dark);
+    background: transparent;
+}
+
+textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--brown-dark);
+    background: transparent;
+    resize: none;
+    overflow: hidden;
+    min-height: 80px;
+    height: auto;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--brown-dark);
+    font-weight: bold;
+}
+
+.form-row-top {
+    display: flex;
+    gap: 15px;
+}
+
+.field-tipo-bebida {
+    flex: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.tipo-container, .size-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.tipo-container select {
+    width: 100%;
+    padding: 6px 10px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: var(--brown-dark);
+    background: var(--bg-cream-2);
+    border: 2px solid var(--brown-dark);
+    outline: none;
+    cursor: pointer;
+}
+
+.size-options {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-left: 5px;
+}
+
+.size-options label {
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.field-cantidad {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.field-cantidad input[type="number"] {
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 2px solid var(--brown-dark);
+    padding: 5px;
+    background: var(--bg-cream-2);
+}
+
+.form-row-middle {
+    display: flex;
+    gap: 15px;
+}
+
+.field-imagen {
+    flex: 1;
+    display: flex;
+    padding: 8px;
+}
+
+.imagen-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.field-llevar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.checkbox-container input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 30px;
+    height: 30px;
+    border: 3px solid var(--brown-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    color: transparent;
+    background: #fff;
+}
+
+.checkbox-container input[type="checkbox"]:checked ~ .checkmark {
+    color: var(--brown-dark);
+}
+
+.form-row-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    flex: 1;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: 3px solid var(--brown-dark);
+    cursor: pointer;
+    text-align: center;
+    background: #fff;
+    color: var(--brown-dark);
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-limpiar:hover {
+    background: var(--brown-pale);
+}
+
+.btn-confirmar {
+    background: var(--brown-dark);
+    color: #fff;
+}
+
+.btn-confirmar:hover {
+    background: var(--brown-medium);
+}
+
+.receipt-container {
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.receipt-subtitle {
+    font-weight: bold;
+    color: var(--brown-medium);
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+.divider {
+    border-bottom: 2px dashed var(--brown-dark);
+    margin: 15px 0;
+}
+
+.receipt-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+    margin: 10px 0;
+}
+
+.receipt-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    border-bottom: 1px dotted var(--brown-pale);
+    padding-bottom: 6px;
+}
+
+.receipt-row .label {
+    font-weight: bold;
+    color: var(--brown-dark);
+}
+
+.receipt-row .value {
+    color: var(--brown-medium);
+    text-transform: capitalize;
+}
+
+.observaciones-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    border-bottom: none;
+}
+
+.value-obs {
+    width: 100%;
+    background: var(--bg-cream-2);
+    padding: 10px 12px;
+    border: 2px solid var(--brown-dark);
+    font-style: italic;
+    color: var(--brown-dark);
+    word-break: break-word;
+    white-space: pre-wrap;
+    box-sizing: border-box;
+}
+
+.receipt-actions {
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+}
+
+.receipt-actions .btn {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Responsive design for Tablet and Mobile */
+@media (max-width: 600px) {
+    .form-row-top {
+        flex-direction: column;
+    }
+
+    .field-tipo-bebida {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form-row-middle {
+        flex-direction: column;
+    }
+
+    .form-row-buttons {
+        flex-direction: column;
+    }
+
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+}

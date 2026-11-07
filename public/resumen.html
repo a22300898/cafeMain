@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibo - Extremely Cool Beverages</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container receipt-container">
+    <h1>Extremely Cool Beverages</h1>
+    <p class="receipt-subtitle">Confirmación de Pedido</p>
+
+    <div class="divider"></div>
+
+    <div class="receipt-details">
+        <div class="receipt-row">
+            <span class="label">nombre:</span>
+            <span id="rec-nombre" class="value"></span>
+        </div>
+        <div class="receipt-row">
+            <span class="label">correo:</span>
+            <span id="rec-correo" class="value"></span>
+        </div>
+        <div class="receipt-row">
+            <span class="label">tipo de bebida:</span>
+            <span id="rec-tipo" class="value"></span>
+        </div>
+        <div class="receipt-row">
+            <span class="label">tamaño:</span>
+            <span id="rec-tamano" class="value"></span>
+        </div>
+        <div class="receipt-row">
+            <span class="label">cantidad:</span>
+            <span id="rec-cantidad" class="value"></span>
+        </div>
+        <div class="receipt-row">
+            <span class="label">para llevar:</span>
+            <span id="rec-llevar" class="value"></span>
+        </div>
+        <div class="receipt-row observaciones-row">
+            <span class="label">observaciones:</span>
+            <p id="rec-observaciones" class="value-obs">ninguna</p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="receipt-actions">
+        <a href="index.html" class="btn btn-confirmar">volver al inicio</a>
+    </div>
+</div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+
+    document.getElementById('rec-nombre').textContent = params.get('nombre') || '';
+    document.getElementById('rec-correo').textContent = params.get('correo') || '';
+    document.getElementById('rec-tipo').textContent = params.get('tipo') || '';
+    document.getElementById('rec-tamano').textContent = params.get('tamano') || '';
+    document.getElementById('rec-cantidad').textContent = params.get('cantidad') || '1';
+    document.getElementById('rec-llevar').textContent = params.get('llevar') || 'No';
+    document.getElementById('rec-observaciones').innerText = params.get('observaciones');
+</script>
+</body>
+</html>
